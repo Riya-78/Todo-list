@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="todo-favicon.webp" type="image/x-icon">
+    <title>Todo List</title>
+</head>
+<style>
+    body {
+        background-color: rgb(186, 163, 132);
+    }
+    
+    h1{
+        color:rgb(142, 97, 40);
+        font-size: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 img{
+        width: 40px;
+        height: 45px;
+        padding-left: 6px;
+       
+    }
+
+     .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+
+    .box {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgb(243, 224, 200);
+        border-radius: 20px;
+        box-shadow: 20px solid rgb(118, 10, 10);
+        width: 550px;
+        min-height: 60vh;
+        
+    }
+
+    #circle {
+        background-color: rgb(142, 97, 39);
+        border-radius: 80px;
+        border: none;
+        color: white;
+        font-size: 30px;
+        height: 45px;
+        width: 45px;
+        display: inline-block;
+        vertical-align: center;
+    }
+
+    #circle:hover {
+        background-color: rgb(114, 41, 41);
+        cursor: pointer;
+    }
+
+    #inputbox{
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid rgb(142, 97, 40);
+        outline: none;
+       font-size: 17px;
+       width: 83%;
+       padding: 2px 8px;
+       
+    }
+    .Input{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 12px 15px;
+    }
+    ul{
+        padding: 0px;
+        margin: 7px;
+    }
+    ul li{
+        text-align: left;
+        list-style: none;
+        /* margin-bottom: 10px; */
+        color:rgb(123, 84, 33);
+        margin: 6px;
+        font-size: 21px;
+        display: flex;
+        user-select: none;
+        padding: 10px 5px 4px 35px;
+        position: relative;
+    }
+    ul li::before{
+        content: '';
+        position: absolute;
+        margin-right: 8px;
+        background: url("unticked bullet.png");
+        padding-left: 8px;
+        padding-right: 5px; 
+        margin: 1px -40px;
+       border-radius: 50%;
+       background-size: cover;
+       background-position: center;
+       width: 23px;
+       height: 23px;
+    } 
+    ul li span{
+        position: absolute;
+        font-size: 23px;
+        right: 0;
+        top: 5px;
+        margin-right: 6px;
+        text-align: center;
+        height: 30px;
+        width:30px; 
+        line-height: 30px;
+        border-radius: 40px;
+    }
+   
+    ul li span:hover{
+
+        background-color: rgb(123, 84, 33);
+        color: white;
+    }
+    ul li.checked{
+       text-decoration: line-through;
+    }
+    ul li.checked::before{
+     background-image: url(tick-removebg-preview.png) ;
+      height: 23px;
+      width: 18px;
+      margin-left: -32px;
+    }
+
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>To-Do List <img src="todopic.png" alt="error"></h1>
+            <div class="Input">
+                <input id="inputbox" type="text" placeholder="Add a task">
+                <button id="circle" onclick="addTask()">+</button>
+            </div>
+            
+            <ul id="list">
+                    <!-- <li class="checked">task1 </li>
+                    <li>task2 </li>
+                    <li>task3 </li> -->
+            </ul> 
+        </div>
+    </div>
+    <script src="ToDolist.js"></script>
+</body>
+
+</html>
